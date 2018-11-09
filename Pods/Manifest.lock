@@ -1,0 +1,16 @@
+PODS:
+  - NewRelicAgent (6.4.1)
+
+DEPENDENCIES:
+  - NewRelicAgent
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - NewRelicAgent
+
+SPEC CHECKSUMS:
+  NewRelicAgent: 1af35e469381d9ad3c87c73faeb05a7e9a584245
+
+PODFILE CHECKSUM: 71dcbce94d50577128b2c50597a95e27ea3386fb
+
+COCOAPODS: 1.5.3
