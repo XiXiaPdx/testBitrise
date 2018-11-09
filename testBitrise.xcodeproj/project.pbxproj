@@ -102,6 +102,7 @@
 				D55F1889219608AF00BC409B /* Frameworks */,
 				D55F188A219608AF00BC409B /* Resources */,
 				D55F18A4219609A100BC409B /* ShellScript */,
+				D55F18A5219621B300BC409B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -194,6 +195,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "SCRIPT=`/usr/bin/find \"${SRCROOT}\" -name newrelic_postbuild.sh | head -n 1`\n/bin/sh \"${SCRIPT}\" \"AAd2cc26a1deed0b254aa48e260b4f6d5faea1a2a8\"\n";
+		};
+		D55F18A5219621B300BC409B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo FORCE AN ERROR \nech\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
