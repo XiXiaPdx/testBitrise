@@ -101,8 +101,7 @@
 				D55F1888219608AF00BC409B /* Sources */,
 				D55F1889219608AF00BC409B /* Frameworks */,
 				D55F188A219608AF00BC409B /* Resources */,
-				D55F18A4219609A100BC409B /* ShellScript */,
-				D55F18A5219621B300BC409B /* ShellScript */,
+				D55F18A4219609A100BC409B /* Upload New Relic dSYM */,
 			);
 			buildRules = (
 			);
@@ -179,7 +178,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D55F18A4219609A100BC409B /* ShellScript */ = {
+		D55F18A4219609A100BC409B /* Upload New Relic dSYM */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -188,6 +187,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Upload New Relic dSYM";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -195,23 +195,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "SCRIPT=`/usr/bin/find \"${SRCROOT}\" -name newrelic_postbuild.sh | head -n 1`\n/bin/sh \"${SCRIPT}\" \"AAd2cc26a1deed0b254aa48e260b4f6d5faea1a2a8\"\n";
-		};
-		D55F18A5219621B300BC409B /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "echo FORCE AN ERROR \nech\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
