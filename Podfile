@@ -6,6 +6,8 @@ target 'testBitrise' do
   use_frameworks!
 
   pod "NewRelicAgent"
+  pod "Alamofire"
+  pod "SwiftyJSON"
 
   # Pods for testBitrise
 
