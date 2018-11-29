@@ -23,6 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //This changes the code for a new build ID to test and make sure we fail Bitrise
         // the appsee test script is removed
         
+        let myView = ViewController()
+        var test = myView 
+        
 
         return true
     }
