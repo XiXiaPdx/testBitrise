@@ -103,6 +103,7 @@
 				D55F188A219608AF00BC409B /* Resources */,
 				BA1DD877ED308367E5061ACB /* [CP] Embed Pods Frameworks */,
 				D55F18A4219609A100BC409B /* Upload New Relic dSYM */,
+				D5E6055F21B0591F002398C8 /* AppSee LIke Script Test */,
 			);
 			buildRules = (
 			);
@@ -212,6 +213,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "SCRIPT=`/usr/bin/find \"${SRCROOT}\" -name newrelic_postbuild.sh | head -n 1`\n/bin/bash \"${SCRIPT}\" \"AAd2cc26a1deed0b254aa48e260b4f6d5faea1a2a8\"\n";
+		};
+		D5E6055F21B0591F002398C8 /* AppSee LIke Script Test */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "AppSee LIke Script Test";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "parse_region_aware() {\necho \"New Relic: parsing region from API key: ${APIKEY}\"\nREGION=`echo ${APIKEY} | grep -oE \"^.*?x\" | head -1`\nif [ ! -z ${REGION} ]; then\necho \"New Relic: region ${REGION/%x}\"\nDSYM_UPLOAD_URL=\"https://mobile-symbol-upload.${REGION/%x}.nr-data.net\"\necho \"upload url is now ${DSYM_UPLOAD_URL}\"\nfi\n\n}\n\necho \"Appsee Test - Starting debug symbols upload...\"\n\nAPIKEY=\"AAb78254ff1f586f4e7321fa543ce2ebd58319e00b\"\nAPIURL=\"https://mobile-symbol-upload.newrelic.com\"\n\nparse_region_aware\n\n\n# Check given APIKey\n\n\n# Skip simulator build\nif [ \"$EFFECTIVE_PLATFORM_NAME\" == \"-iphonesimulator\" ]; then\necho \"Appsee Test - Ignoring Simulator build\"\nexit 0\nfi\n\n# Skip debug build\nif [ \"$CONFIGURATION\" != \"Release\" ]; then\necho \"Appsee - Ignoring Debug build\"\nexit 0\nfi\n\nDSYM_PATH=${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\nZIP_DIR=\"/tmp/Appsee\"\nZIP_PATH=\"${ZIP_DIR}/$DWARF_DSYM_FILE_NAME.zip\"\n\n# Check if zip directory available\nif [ ! -d \"$ZIP_DIR\" ]; then\nmkdir \"${ZIP_DIR}\"\nfi\n\n# Check if dSym available\nif [ ! -d \"$DSYM_PATH\" ]; then\necho \"Appsee - dSYM file not found on: ${DSYM_PATH}. Please contact support@appsee.com for assistance\"\nexit 1\nfi\n\n# Zip dSYM\ncd \"${DWARF_DSYM_FOLDER_PATH}\"\n/usr/bin/zip -D -r -q  \"${ZIP_PATH}\" \"${DWARF_DSYM_FILE_NAME}\"\n\nif [ $? -ne 0 ]; then\necho \"Appsee - dSYM zip failed. Please contact support@appsee.com for assistance\"\nexit 1\nfi\n\n\n# appSee modified with new relic upload dSYM\nSERVER_RESPONSE=$(curl --write-out %{http_code} --silent --output /dev/null -F dsym=@\"${ZIP_PATH}\" -H \"x-app-license-key: ${APIKEY}\" \"${APIURL}/symbol\")\nif [ \"${SERVER_RESPONSE}\" -eq \"201\"  ]; then\necho \"new relic: successfully uploaded dsym files\"\nelse\necho \"new relic: error \\\"${SERVER_RESPONSE}\\\" while uploading \\\"${ZIP_PATH}\\\"\"\nfi\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

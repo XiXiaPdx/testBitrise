@@ -3,16 +3,17 @@ executing upload_map_file_to_new_relic
 New Relic: map file upload attempt #1 (of 3)
 Using URL: https://mobile-symbol-upload.newrelic.com
 New Relic: Successfully uploaded map files
-/Users/xxia/iOS/testBitrise/Pods/NewRelicAgent/NewRelicAgent/NewRelicAgent.framework/Versions/A/Resources/generateMap.py", line 96, in <module>
-    os.mkdir(workDir)
-OSError: [Errno 17] File exists: '/Users/xxia/Library/Developer/Xcode/DerivedData/testBitrise-auisxfvvxtubkmcwwffhhmqohtnj/Build/Intermediates.noindex/testBitrise.build/Release-iphoneos/testBitrise.build/tmp'
+/Users/xxia/iOS/testBitrise/Pods/NewRelicAgent/NewRelicAgent/NewRelicAgent.framework/Versions/A/Resources/generateMap.py", line 248, in <module>
+    processDsymFile(dsym, workDir)
+  File "/Users/xxia/iOS/testBitrise/Pods/NewRelicAgent/NewRelicAgent/NewRelicAgent.framework/Versions/A/Resources/generateMap.py", line 200, in processDsymFile
+    nrZipFile.write(file.name)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/zipfile.py", line 1123, in write
+    st = os.stat(filename)
+OSError: [Errno 2] No such file or directory: '/Users/xxia/Library/Developer/Xcode/DerivedData/testBitrise-auisxfvvxtubkmcwwffhhmqohtnj/Build/Intermediates.noindex/testBitrise.build/Release-iphoneos/testBitrise.build/tmp/4a6faa2733f3339a80ce66675d77f4c7.map'
 New Relic: map file upload attempt #2 (of 3)
 Using URL: https://mobile-symbol-upload.newrelic.com
-Traceback (most recent call last):
-  File "/Users/xxia/iOS/testBitrise/Pods/NewRelicAgent/NewRelicAgent/NewRelicAgent.framework/Versions/A/Resources/generateMap.py", line 96, in <module>
-    os.mkdir(workDir)
-OSError: [Errno 17] File exists: '/Users/xxia/Library/Developer/Xcode/DerivedData/testBitrise-auisxfvvxtubkmcwwffhhmqohtnj/Build/Intermediates.noindex/testBitrise.build/Release-iphoneos/testBitrise.build/tmp'
-New Relic: map file upload attempt #3 (of 3)
+New Relic: Successfully uploaded map files
+ upload attempt #3 (of 3)
 Using URL: https://mobile-symbol-upload.newrelic.com
 Traceback (most recent call last):
   File "/Users/xxia/iOS/testBitrise/Pods/NewRelicAgent/NewRelicAgent/NewRelicAgent.framework/Versions/A/Resources/generateMap.py", line 96, in <module>
