@@ -20,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NRLogger.setLogLevels(NRLogLevelALL.rawValue)
  NewRelic.start(withApplicationToken:"AAd2cc26a1deed0b254aa48e260b4f6d5faea1a2a8")
         
-        //This changes the code for a new build ID to test dsym upload
+        //This changes the code for a new build ID to test and make sure we fail Bitrise
+        // the appsee test script is removed
         
 
         return true
