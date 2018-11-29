@@ -24,8 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // the appsee test script is removed
         
         let myView = ViewController()
-        var test = myView 
+        var test = UIView()
         
+        window?.addSubview(test)
+        window?.makeKeyAndVisible()
 
         return true
     }
