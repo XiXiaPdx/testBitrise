@@ -12,10 +12,14 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        NewRelic.crashNow("In View Did Load")
+
         
     }
 
 
+    @IBAction func crash(_ sender: UIButton) {
+        
+        NewRelic.crashNow("button crash")
+    }
 }
 
