@@ -18,16 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         NRLogger.setLogLevels(NRLogLevelALL.rawValue)
- NewRelic.start(withApplicationToken:"AAb78254ff1f586f4e7321fa543ce2ebd58319e00b")
+ NewRelic.start(withApplicationToken:"AAb65170564135690717b9de533701e920ffc0887b")
         
-        //This changes the code for a new build ID to test and make sure we fail Bitrise
-        // the appsee test script is removed
-        
-        let myView = ViewController()
-        var test = UIView()
-        
-        window?.addSubview(test)
-        window?.makeKeyAndVisible()
+       
+//        
+//        let myView = ViewController()
+//        var test = UIView()
+//
+//        window?.addSubview(test)
+//        window?.makeKeyAndVisible()
 
         return true
     }
