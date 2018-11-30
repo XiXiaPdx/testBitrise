@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        NewRelic.crashNow("In View Did Load")
+//        NewRelic.crashNow("In View Did Load")
         
     }
 
