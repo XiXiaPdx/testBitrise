@@ -211,7 +211,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [1 -eq 0]\necho \"in if\"\nfi\necho \"outside of if\"\n";
+			shellScript = "SCRIPT=`/usr/bin/find \"${SRCROOT}\" -name newrelic_postbuild.sh | head -n 1`\n/bin/bash \"${SCRIPT}\" \"AAb65170564135690717b9de533701e920ffc0887b\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
