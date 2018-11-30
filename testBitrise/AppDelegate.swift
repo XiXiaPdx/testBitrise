@@ -19,15 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         NRLogger.setLogLevels(NRLogLevelALL.rawValue)
  NewRelic.start(withApplicationToken:"AAb65170564135690717b9de533701e920ffc0887b")
-        
+        let view = ViewController()
        
-//        
-//        let myView = ViewController()
-//        var test = UIView()
-//
-//        window?.addSubview(test)
-//        window?.makeKeyAndVisible()
-
         return true
     }
 
